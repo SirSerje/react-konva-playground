@@ -1,6 +1,5 @@
 import React from 'react';
 import { Image } from 'react-konva';
-import Konva from 'konva';
 
 
 class URLImage extends React.Component {

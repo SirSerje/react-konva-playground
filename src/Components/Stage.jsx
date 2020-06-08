@@ -3,7 +3,6 @@ import MagicCard from './MagicCard';
 import Card from '../card.png';
 import React from 'react';
 
-//TODO тут мутки со стартовой точкой
 class Stager extends React.Component {
   constructor(props) {
     super(props);
@@ -42,7 +41,7 @@ class Stager extends React.Component {
   }
 
   render() {
-    const { stageWidth, stageHeight, height, width, reference } = this.props;
+    const { stageWidth, stageHeight, height, width, reference:cardReference } = this.props;
     const { currentFrame, frames } = this.state;
     const framesLength = this.state.frames.length - 1;
 
@@ -51,7 +50,7 @@ class Stager extends React.Component {
 
     return (
 
-      <Stage width={stageWidth} height={stageHeight}>
+      <Stage className="canvas" width={stageWidth} height={stageHeight}>
         <Layer>
           <MagicCard
             x={frames[currentFrame].x()}
@@ -60,7 +59,7 @@ class Stager extends React.Component {
             height={height}
             width={width}
 
-            ref={reference}
+            ref={cardReference}
             src={Card}
 
             increaseCounter={this.increaseCounter}

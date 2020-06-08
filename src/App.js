@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Stager from './Components/Stage';
-
+import Logo from './logo.svg'
 
 
 class App extends React.PureComponent {
@@ -46,10 +46,12 @@ class App extends React.PureComponent {
           reference={node => this.mainCard = node}
         />
 
-        <div className="home">
+        <div className="app-top">
           <button onClick={this.nextTween}>nextTween</button>
           <button onClick={this.prevTween}>prevTween</button>
         </div>
+
+        <div className="app-background" />
 
       </div>
     );

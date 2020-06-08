@@ -4,12 +4,16 @@ import URLImage from './UriImage';
 import Card from '../card.png';
 import Konva from 'konva'
 
+
 const TWEEN_TIME = .3;
 
 class MagicCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      description: {
+        id: 0, text: 'Some text, which describes card',
+      },
       elements: [
         { id: 1, text: 'Eat apples', hover: false },
         { id: 2, text: 'Walk around', hover: false },
@@ -45,14 +49,6 @@ class MagicCard extends React.Component {
     this.props.increaseCounter();
   }
 
-  hoverOn = (e) => {
-    console.log(e.target);
-  }
-
-  hoverOf = (e) => {
-    console.log(e.target);
-  }
-
   render() {
     const textOffsetX = 24;
     const textOffsetY = 260
@@ -71,6 +67,14 @@ class MagicCard extends React.Component {
           height={this.props.height}
           onClick={this.props.onClick}
         />
+        <Text
+          id={this.state.description.id}
+          text={this.state.description.text}
+          x={50}
+          y={50}
+          fontSize={10}
+          />
+
         {this.state.elements.map((item) => {
           return (
             <Text
